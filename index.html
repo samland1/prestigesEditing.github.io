@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link id="favicon-light" rel="icon" href="image/Icon/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <title>PrestigesEditing Portfolio</title>
+</head>
+
+<body>
+    <video id="background-video" autoplay muted loop>
+        <source src="video/Topography_black_and_white.mp4" type="video/mp4">
+
+    </video>
+    <header class="fade-cool">
+        <img src="image/PresitgesEditing/PrestigesEditing-logos_white_main.png" alt="Logo" class="logo_header">
+        <h1 hidden>PrestigesEditing</h1>
+    </header>
+    
+    <div class="hero" >
+        <h1 class="fade-in" >Welcome to PrestigesEditing</h1>
+        <p class="fade-in">Your Premier Destination for Video Editing Excellence</p> <br>
+        <div class="button-container">
+            <a id="cool1"href="#Contact" class="hero-button">
+                <h3>Contact Us</h3>
+            </a>
+        
+            <a href="#services" class="hero-button">
+                <h3>Our Services</h3>
+            </a>
+        
+            <a href="#videos" class="hero-button">
+                <h3>Our Videos</h3>
+            </a>
+        </div>
+        
+
+        </div>
+    </div>
+    
+    
+    
+    <main>
+        <section id="services" class="fade-in">
+            <div class="section-header">
+                <h2>What We Offer ?</h2>
+                <img src="image/PresitgesEditing/service.png" alt="Service Image" width="100">
+            </div>
+            <ul>
+                <li><h3>Elevate Watch Time</h3> Our professional video editing enhances engagement, 
+                    driving up watch time and viewer retention.</li>
+                <li><h3>Boost CTR</h3> Compelling thumbnails and titles crafted to maximize clicks and engagement.</li>
+                <li><h3>Tag Optimization</h3> Get discovered faster with strategic tagging.</li>
+                <li><h3>Algorithm Mastery</h3> Rise to the top of YouTube searches with our algorithm expertise.</li>
+                <li><h3>Exclusive Bundle</h3> Video Editing, Thumbnail Design, Tag Optimization, Title Ideas</li>
+                <li><h3>Short-Form</h3> Elevate your presence on TikTok, Instagram Reels, and YouTube Shorts with visually captivating content.</li>
+            </ul>
+        </section>        
+        <section id="videos" class="fade-in">
+            <h2>Our Videos</h2>
+            <div class="video-carousel swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <iframe id="video1" src="https://www.youtube.com/embed/NLyD41Q2LQ0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe id="video2"  src="https://www.youtube.com/embed/KyJbTiUMDVk" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe id="video3"  src="https://www.youtube.com/embed/iIOfoysamxo" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+        <section id="about" class="fade-in">
+            <h2>About Us</h2>
+            <p>With three years of part-time editing experience, we specialize in video editing using premier software like Adobe Premiere Pro and Photoshop. Fluent in both French and English, our mission is to save creators time and resources while delivering exceptional quality.</p>
+        </section>        
+        <section id="Contact" class="fade-in">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-details">
+                    <p>
+                        E-Mail : <a href="mailto:prestigesediting@gmail.com">prestigesediting@gmail.com</a>
+                        <br>
+                        Discord: tisam
+                    </p>
+                </div>
+                <div class="social-media-icons">
+                    <span class="social-label">Social Media :</span>
+                    <a href="https://www.youtube.com/channel/UCyhkEIN8wF-Eb2mabHozELA" target="_blank">
+                        <img src="image/social/youtube_logo.png" width="30" alt="YouTube" class="social-icon">
+                    </a>
+                    <a href="https://www.twitter.com/your-twitter-handle" target="_blank">
+                        <img src="image/social/x_logo.png" width="20" alt="x" class="social-icon">
+                    </a>
+                    <a href="https://www.instagram.com/prestiges.editing/" target="_blank">
+                        <img src="image/social/instagram_logo.png" height="22" alt="Instagram" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+    </main>
+    <footer>
+        <div class="footer-content" >
+            <img  class="fade-in"src="image/PresitgesEditing/PrestigesEditing-logos_white_footer.png" alt="Logo" class="logo" width="300">
+            <p class="fade-in">&copy; 2023 PrestigesEditing Video Editing Portfolio</p>
+        </div>
+    </footer>
+    
+
+    <!-- JavaScript for scroll-triggered reveal -->
+    <script src="script.js"></script>
+
+    <!-- Include jQuery -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include Swiper.js -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- YouTube IFrame API script -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        var swiper = new Swiper('.video-carousel', {
+            slidesPerView: 'auto', // Adjust slidesPerView
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 10000, // Delay in milliseconds (10 seconds)
+            },
+            loop: true, // Enable infinite loop
+        });
+    </script>
+    
+    <!-- Rest of your scripts -->
+    <script>// Function to initialize YouTube videos when they become visible
+    function initializeYouTubePlayer(videoId, iframeId) {
+        new YT.Player(iframeId, {
+            videoId: videoId,
+            width: 560,
+            height: 315,
+            playerVars: {
+                'autoplay': 0,
+                'controls': 1,
+                'rel': 0, // Disable related videos
+            },
+        });
+    }
+    </script>
+    
+    <script>
+        // Function to initialize YouTube videos
+        function onYouTubeIframeAPIReady() {
+            // Video 1
+            new YT.Player('video1', {
+                videoId: 'NLyD41Q2LQ0',
+                width: 560,
+                height: 315,
+                playerVars: {
+                    'autoplay': 0,  // Autoplay disabled
+                    'controls': 1,  // Show video controls
+                }
+            });
+    
+            // Video 2
+            new YT.Player('video2', {
+                videoId: 'jlaIGXuL7JQ',
+                width: 560,
+                height: 315,
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 1,
+                }
+            });
+    
+            // Video 3
+            new YT.Player('video3', {
+                videoId: 'KyJbTiUMDVk',
+                width: 560,
+                height: 315,
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 1,
+                }
+            });
+    
+            // Video 4
+            new YT.Player('video4', {
+                videoId: 'iIOfoysamxo',
+                width: 560,
+                height: 315,
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 1,
+                }
+            });
+        }
+    </script>
+    <script>// JavaScript for handling the fade-in effect
+    document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".fade-in");
+    
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.2, // Adjust this threshold as needed
+        };
+    
+        const observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+    
+        fadeElements.forEach(function (element) {
+            observer.observe(element);
+        });
+    });
+    </script>
+    
+    </body>
+    </html>
+    <script>// Function to initialize YouTube videos when they become visible
+        function initializeYouTubePlayer(videoId, iframeId) {
+            new YT.Player(iframeId, {
+                videoId: videoId,
+                width: 560,
+                height: 315,
+                playerVars: {
+                    'autoplay': 0,
+                    'controls': 1,
+                    'rel': 0, // Disable related videos
+                },
+            });
+        }
+        </script>
+
+<script>
+    // Function to initialize YouTube videos
+    function onYouTubeIframeAPIReady() {
+        // Video 1
+        new YT.Player('video1', {
+            videoId: 'NLyD41Q2LQ0',
+            width: 560,
+            height: 315,
+            playerVars: {
+                'autoplay': 0,  // Autoplay disabled
+                'controls': 1,  // Show video controls
+            }
+        });
+
+        // Video 2
+        new YT.Player('video2', {
+            videoId: 'jlaIGXuL7JQ',
+            width: 560,
+            height: 315,
+            playerVars: {
+                'autoplay': 0,
+                'controls': 1,
+            }
+        });
+
+        // Video 3
+        new YT.Player('video3', {
+            videoId: 'KyJbTiUMDVk',
+            width: 560,
+            height: 315,
+            playerVars: {
+                'autoplay': 0,
+                'controls': 1,
+            }
+        });
+
+        // Video 4
+        new YT.Player('video4', {
+            videoId: 'iIOfoysamxo',
+            width: 560,
+            height: 315,
+            playerVars: {
+                'autoplay': 0,
+                'controls': 1,
+            }
+        });
+    }
+</script>
+<script>// JavaScript for handling the fade-in effect
+    document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".fade-in");
+    
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.2, // Adjust this threshold as needed
+        };
+    
+        const observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+    
+        fadeElements.forEach(function (element) {
+            observer.observe(element);
+        });
+    });
+    </script>
+   <script>
+    // Get the video element by its id
+    const backgroundVideo = document.getElementById('background-video');
+
+    // Add an event listener to trigger the animation when the video can play through
+    backgroundVideo.addEventListener('canplaythrough', function () {
+        // Animation code here
+        const logoHeader = document.querySelector('.logo_header');
+        logoHeader.style.animation = 'slideInFromLeft 1.3s ease-in-out forwards';
+    });
+
+    // Set the playback rate and start loading the video
+    backgroundVideo.playbackRate = 0.8;
+    backgroundVideo.load();
+</script>
+
+    <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth' // Smooth scrolling behavior
+            });
+        }
+    });
+});
+</script>
+</body>
+</html>
