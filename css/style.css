@@ -1,0 +1,256 @@
+/* Define the color palette */
+:root {
+    --background-color: #191717;
+    --text-color: #F1EFEF;
+    --accent-color: #CCC8AA;
+    --highlight-color: #0a0a0a;
+}
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+/* Define the animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Reset some default styles for better consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color and font for the entire page */
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    max-width: 1080px; /* Adjust the maximum width as desired */
+    margin: 0 auto; /* Center the page horizontally */
+    padding: 0 20px; 
+    overflow-x: hidden;
+    /* Add some spacing on the sides if desired */
+}
+
+/* Style the header */
+header {
+    margin: 20px;
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    padding: 100px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center vertically */
+    justify-content: center;
+    height: 300px;
+    border-radius: 20px; /* Add rounded corners */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.section-header {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+.section-header img {
+    max-width: 100px; /* Adjust the max width of the image as needed */
+
+}
+/* Style the hero section with the accent color for text */
+.hero {
+    background-color: var(--background-color);
+    color: var(--accent-color);
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    width: auto;
+    box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.5);
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.button-container {
+    display: flex;
+    margin-top: 20px; /* Add margin between buttons and text */
+}
+/* Increase the z-index for your buttons */
+.hero-button {
+    background-color: var(--highlight-color);
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    margin-right: 40px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Use a cubic-bezier easing function */
+    z-index: 2; /* Add this line to set a higher z-index */
+}
+
+.hero-button:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+}
+
+/* Add a hover animation */
+.hero-button:hover {
+    transform: scale(1.1); /* Adjust the scaling as needed */
+}
+
+/* Define the hover animation */
+@keyframes grow {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+main {
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--highlight-color);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 20)
+}
+li {
+    margin: 20px; 
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+}
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+.contact-details {
+    flex: 1;
+}
+.social-media-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-label {
+    margin-right: 15px;
+}
+
+.social-icon {
+    margin-right: 15px; /* Adjust the margin to increase the spacing */
+    transition: transform 0.3s ease;
+}
+.social-icon:hover {
+    transform: scale(1.2); /* Increase the scale factor for the grow effect */
+}
+footer {
+    text-align: center;
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    display: flex; /* Add display flex */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Vertically center items */
+    border-radius: 20px; /* Add rounded corners */
+}
+
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+/* Custom CSS for Swiper carousel */
+.video-carousel {
+    position: relative;
+    width: 100%;
+    height: 0; /* Change height to 0 to allow for dynamic aspect ratio */
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    overflow: hidden;
+}
+
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Style the arrow buttons and their inner elements */
+.swiper-button-prev, .swiper-button-next {
+    background-color: transparent; /* Set background color to transparent */
+    font-size: 0; /* Hide text content, if any */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Set the color of the arrow icons */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: ''; /* Clear any content */
+    font-family: 'swiper-icons'; /* Adjust this to match your icon font */
+    font-size: 60px; /* Adjust the size as needed */
+    color: white; /* Set the arrow color to white */
+}
+
+/* Hover styles */
+.swiper-button-prev:hover, .swiper-button-next:hover {
+    background-color: rgba(0, 0, 0, 0.);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Optional: Add a slight upward motion */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Apply the slower fade-in animation to specific elements */
+.fade-in {
+    animation: fadeIn 2.5s ease-in-out forwards; /* Increased duration for a slower fade-in */
+    opacity: 0; /* Start with opacity 0 */
+    transition: opacity 0.3s ease-in-out; /* Add a smooth opacity transition */
+}
+iframe {
+width: 100%;
+height: 500px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+}
+.swiper-slide {
+    margin-right: 2100px; /* Adjust the margin as needed */
+}
+
+/* Ensure the last slide doesn't have right margin */
+.swiper-slide:last-child {
+    margin-right: 0;
+}
