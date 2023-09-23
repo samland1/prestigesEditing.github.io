@@ -15,20 +15,6 @@
     height: auto;
     z-index: -1;
 }
-
-/* Define the animation */
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-
 /* Reset some default styles for better consistency */
 * {
     margin: 0;
@@ -58,7 +44,7 @@ header {
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Center vertically */
     justify-content: center;
-    height: 300px;
+    height: 20px;
     border-radius: 20px; /* Add rounded corners */
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
@@ -253,4 +239,82 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 /* Ensure the last slide doesn't have right margin */
 .swiper-slide:last-child {
     margin-right: 0;
+}
+@media (max-width: 768px) {
+    /* Add mobile-specific styles here */
+    body {
+        font-size: 16px;
+    }
+    .header {
+        height: auto;
+    
+    }
+    .logo_header{
+        width: 400px;
+    }
+    .social-icon{
+        width: auto;
+        height: 20px;
+    }
+    .hero {
+        padding: 20px;
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+        margin-top: 10px;
+    }
+
+    .hero-button {
+        margin-right: 0;
+        margin-bottom: 10px; /* Add margin between buttons */
+        width: 100%; /* Make buttons full width on mobile */
+    }
+
+    main {
+        padding: 20px;
+    }
+    .video-carousel {
+        position: relative;;
+        height: 40%;
+        width: 100%;
+        padding-bottom: 0%;
+       /* Adjust the aspect ratio for mobile */
+
+    }
+
+    /* Adjust the slides within the carousel for mobile */
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0;
+    }
+    .footer {
+       height: 10px; /* Adjust the padding for the footer on mobile */
+        /* You can also adjust other properties like font size or line height if needed */
+    }
+    .footer-content {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; 
+    }
+    .footer-img{
+    position: fixed;
+    .fade-in {
+        animation-duration: 2s; /* Slower fade-in effect on mobile */
+    }
+}
+}
+/* Define the animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
