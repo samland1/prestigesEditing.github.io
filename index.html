@@ -49,10 +49,11 @@
                 <!-- Add a rounded rectangle for the video presentation -->
                 <div class="video-presentation-box">
                     <!-- Replace 'YOUR_GOOGLE_DRIVE_LINK_HERE' with your Google Drive link -->
-                    <iframe src="https://drive.google.com/file/d/1syMqWQOykW9UBXeBqxKL1zuUHyt43sZX/preview" frameborder="0" allowfullscreen
-                        width="1280"
-                        height="720"> <!-- Set the height to 720 pixels -->
-                    </iframe>
+                    <iframe src="https://drive.google.com/file/d/1_d1zMgrMwq01wIllcBlaQEZn46QO2bOx/preview" frameborder="0" allowfullscreen
+                    width="1280"
+                    height="720"> <!-- Set the height to 720 pixels -->
+                </iframe>
+                
                 </div>
             </div>
         </section>
@@ -421,5 +422,43 @@
         });
     });
     </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Set a flag to track if the user has scrolled within the first 3 seconds
+                let scrolledWithin3Seconds = false;
+    
+                // Function to scroll to the header
+                function scrollToHeader() {
+                    const header = document.querySelector("header");
+                    if (header) {
+                        header.scrollIntoView({ behavior: "smooth" });
+                    }
+                }
+    
+                // Add a timeout to scroll to the header after 3 seconds if the user hasn't scrolled
+                setTimeout(() => {
+                    if (!scrolledWithin3Seconds) {
+                        scrollToHeader();
+                    }
+                }, 3000);
+    
+                // Event listener for scrolling
+                window.addEventListener("scroll", function () {
+                    scrolledWithin3Seconds = true;
+                });
+    
+                // Function to stop the timeout and prevent auto-scrolling
+                function stopAutoScroll() {
+                    clearTimeout(autoScrollTimeout);
+                }
+    
+                // Event listener for user interaction (e.g., clicking a button to stop auto-scroll)
+                const stopAutoScrollButton = document.getElementById("stopAutoScrollButton");
+                if (stopAutoScrollButton) {
+                    stopAutoScrollButton.addEventListener("click", stopAutoScroll);
+                }
+            });
+        </script>
+    
 </body>
 </html>
