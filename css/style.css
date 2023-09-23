@@ -5,15 +5,23 @@
     --accent-color: #CCC8AA;
     --highlight-color: #0a0a0a;
 }
+.video-container {
+    display: flex;
+    justify-content: center; /* Center the video horizontally */
+    align-items: center; /* Center the video vertically */
+    height: 100vh; /* Set the height of the container to the viewport height */
+    overflow: hidden;
+    position: relative;
+}
+/* CSS for the video */
 #background-video {
     position: fixed;
     top: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire viewport */
+    z-index: -1; /* Place the video behind other content */
 }
 /* Reset some default styles for better consistency */
 * {
@@ -28,10 +36,11 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
-    max-width: 1080px; /* Adjust the maximum width as desired */
+    max-width: 100vh; /* Adjust the maximum width as desired */
     margin: 0 auto; /* Center the page horizontally */
     padding: 0 20px; 
     overflow-x: hidden;
+    
     /* Add some spacing on the sides if desired */
 }
 
@@ -50,10 +59,12 @@ header {
 }
 
 .section-header {
+    margin-left:3%;
     display: flex;
-    align-items: center; /* Align items vertically in the center */
+    align-items: center;
+    margin-bottom: 0px; /* Align items vertically in the center */
 }
-.section-header img {
+ .service-image {
     max-width: 100px; /* Adjust the max width of the image as needed */
 
 }
@@ -74,13 +85,13 @@ header {
 
 .button-container {
     display: flex;
-    margin-top: 20px; /* Add margin between buttons and text */
+    margin-top: 0px; /* Add margin between buttons and text */
 }
 /* Increase the z-index for your buttons */
 .hero-button {
     background-color: var(--highlight-color);
     text-align: center;
-    padding: 10px 20px;
+    padding: 6px 14px 0px 9px;
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     margin-right: 40px;
@@ -97,6 +108,55 @@ header {
     transform: scale(1.1); /* Adjust the scaling as needed */
 }
 
+#video-presentation {
+    margin: 40px 0;
+}
+
+/* Style for the video container */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.video-cool {
+    padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    position: relative;
+    max-width: 100%; /* Ensure the video box doesn't exceed the parent container */
+    overflow: hidden; /* Hide any overflow to prevent overlap */
+}
+
+.video-presentation-box {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure the video box takes 100% width of its container */
+    height: 100%; /* Ensure the video box takes 100% height of its container */
+}
+
+.video-presentation-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove the border around the iframe */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire box */
+}
+
+/* Adjust the <main> content to avoid overlapping */
+main {
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--highlight-color);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 20);
+    position: relative;
+    z-index: 2; /* Ensure the <main> content is above the video */
+}
+
 /* Define the hover animation */
 @keyframes grow {
     0%, 100% {
@@ -106,15 +166,80 @@ header {
         transform: scale(1.1);
     }
 }
-main {
-    max-width: 1500px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: var(--highlight-color);
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 20)
+
+.custom-list li {
+    list-style-type: none; /* Remove default bullet */
+    padding-left: 0; /* Remove left padding */
+
+    /* Optional: Add spacing between list items */
+    margin-bottom: 10px;
 }
+
+
+
+.image-container {
+    width: 40px; /* Set the width and height for the circular background */
+    height: 40px;
+    background-color: #191717; /* Background color for the circular background */
+    border-radius: 50%; /* Create a circular shape */
+    overflow: hidden; /* Hide any content that extends beyond the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
+    padding-left: 10px; /* Add padding to the left to center the content */
+    transition: all 0.3s ease;
+    margin-bottom: 10px; /* Add margin to create spacing under each item */
+    animation: glow 8s infinite alternate;
+}
+.image-container:hover {
+    transform: scale(1.2);
+}
+.custom-svg {
+    width: 60%; /* Adjust the size of the SVG icon as needed */
+    height: auto; /* Automatically adjust the height to maintain the aspect ratio */
+}
+
+h3 {
+    margin-left: 10px; /* Add margin to the left of the <h3> for spacing */
+    margin-bottom: 10px
+}
+
+.list-item-content {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Vertically align items */
+}
+
+.list-item-content img {
+    margin-right: 10px; /* Adjust spacing between SVG and <h3> */
+}
+
+/* Style <h3> element as needed */
+.custom-list li h3 {
+    font-weight: bold; /* Example style for <h3> */
+}
+.custom-svg {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: inset 0 0 3px rgba(136, 8, 255, 0); /* Start with a small, semi-transparent glow inside */
+    }
+    40% {
+        box-shadow: inset 0 0 5px rgba(136, 8, 255, 0.25); /* Create a slightly larger, more visible glow inside */
+    }
+    70% {
+        box-shadow: inset 0 0 6px rgba(136, 8, 255, 0.3); /* Return to the initial state with a solid glow inside */
+    }
+    100% {
+        box-shadow: inset 0 0 3px rgba(136, 8, 255, 0); /* Start with a small, semi-transparent glow inside */
+    }
+}
+
+
+
+/* Optional: Style the text within list items */
 li {
     margin: 20px; 
 }
@@ -170,9 +295,10 @@ footer {
 .video-carousel {
     position: relative;
     width: 100%;
-    height: 0; /* Change height to 0 to allow for dynamic aspect ratio */
-    padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    height: auto ; /* Change height to 0 to allow for dynamic aspect ratio */
+  /* 16:9 aspect ratio (9 / 16 * 100) */
     overflow: hidden;
+    border-radius: 20px;
 }
 
 
@@ -180,6 +306,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Ensure the last slide doesn't have right margin */
+.swiper-slide:last-child {
+    margin-right: 0;
 }
 
 
@@ -207,7 +338,7 @@ footer {
 
 /* Hover styles */
 .swiper-button-prev:hover, .swiper-button-next:hover {
-    background-color: rgba(0, 0, 0, 0.);
+    background-color: rgba(0, 0, 0, 25%);
 }
 
 @keyframes fadeIn {
@@ -228,18 +359,22 @@ footer {
 }
 iframe {
 width: 100%;
-height: 500px;
+height: 550px;
 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 
 }
-.swiper-slide {
-    margin-right: 2100px; /* Adjust the margin as needed */
-}
 
-/* Ensure the last slide doesn't have right margin */
-.swiper-slide:last-child {
-    margin-right: 0;
-}
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
     /* Add mobile-specific styles here */
     body {
@@ -302,19 +437,25 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
     .footer-img{
     position: fixed;
+    display: none;
+    }
     .fade-in {
         animation-duration: 2s; /* Slower fade-in effect on mobile */
+        
     }
 }
-}
-/* Define the animation */
-@keyframes slideInFromLeft {
+
+@keyframes moveUp {
     0% {
-        transform: translateX(-100%);
-        opacity: 0;
+        transform: translateY(100px); /* Initial position, adjust as needed */
+        opacity: 0; /* Start with opacity 0 */
     }
     100% {
-        transform: translateX(0);
-        opacity: 1;
+        transform: translateY(0); /* Move to the original position */
+        opacity: 1; /* Fully visible */
     }
+}
+
+.move-up {
+    animation: moveUp 3s ease-in-out forwards; /* Animation duration and easing */
 }
